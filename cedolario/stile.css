@@ -1,0 +1,46 @@
+@font-face{font-family:"Newsreader";src:url(caratteri/Newsreader-600.woff) format("woff");font-weight:600;font-display:swap}
+@font-face{font-family:"Hanken Grotesk";src:url(caratteri/HankenGrotesk-400.woff) format("woff");font-weight:400;font-display:swap}
+@font-face{font-family:"Hanken Grotesk";src:url(caratteri/HankenGrotesk-700.woff) format("woff");font-weight:700;font-display:swap}
+/* Carta d'identità di Cedolario: registro avorio, inchiostro bordeaux, angoli dritti, niente ombre. */
+:root{color-scheme:light dark;--fondo:#F4EEE3;--foglio:#FFFCF6;--filo:#E6DCCB;--bordeaux:#7A1F33;--su-bordeaux:#FFFCF6;
+--testo:#26171A;--testo2:#5F4A4D;--titoli:"Newsreader",Georgia,"Times New Roman",serif;
+--font:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+@media (prefers-color-scheme:dark){:root{--fondo:#170F10;--foglio:#221819;--filo:#3A2B2C;--bordeaux:#E7A2B0;--su-bordeaux:#170F10;
+--testo:#F3EAE1;--testo2:#BBA7A2}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--fondo);color:var(--testo);font:400 18px/1.6 var(--font)}
+a{color:var(--bordeaux);text-underline-offset:2px}
+a:focus-visible{outline:3px solid var(--bordeaux);outline-offset:3px}
+.testa,main,.piede{max-width:760px;margin:0 auto;padding-left:16px;padding-right:16px}
+.testa{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding-top:16px;padding-bottom:12px;
+border-bottom:1.5px solid var(--bordeaux)}
+.logo{display:flex;align-items:center;gap:10px;color:var(--testo);text-decoration:none}
+.logo img{width:40px;height:40px;border-radius:9px;display:block}
+.logo span{font:600 30px/1 var(--titoli)}
+.schede{display:flex;gap:0;border:1.5px solid var(--bordeaux)}
+.schede a{display:inline-flex;align-items:center;min-height:42px;padding:0 14px;color:var(--bordeaux);text-decoration:none;
+font-weight:700;font-size:16px;white-space:nowrap}
+.schede a[aria-current]{background:var(--bordeaux);color:var(--su-bordeaux)}
+main{padding-top:8px;padding-bottom:24px}
+h1{font:600 clamp(2.4rem,11vw,3.4rem)/1.1 var(--titoli);margin:28px 0 12px}
+.doppia{display:inline-block;padding-bottom:6px;border-bottom:4px double var(--testo)}
+h2{font:600 1.5rem/1.25 var(--titoli);margin:34px 0 8px}
+h3{font:600 1.2rem/1.3 var(--titoli);margin:0 0 6px}
+p{margin:0 0 12px;overflow-wrap:break-word}
+.data{color:var(--testo2);font-size:15px;font-style:italic}
+.lead{font-size:1.1em}
+b.ui{font-weight:700}
+.foglio,.avviso{position:relative;background:var(--foglio);border-top:1.5px solid var(--bordeaux);padding:14px 16px 6px 30px;margin:24px 0}
+.foglio::before,.avviso::before{content:"";position:absolute;left:14px;top:0;bottom:0;width:1px;background:var(--bordeaux);opacity:.5}
+.foglio h2,.avviso h2{margin-top:0}
+.voci{margin:0 0 12px;padding-left:20px}
+.voci li{margin:6px 0}
+.voci li::marker{color:var(--bordeaux)}
+.pulsante{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 22px;
+background:var(--bordeaux);color:var(--su-bordeaux);font-weight:700;font-size:18px;text-decoration:none}
+.indirizzo{margin-top:10px;color:var(--testo2);overflow-wrap:anywhere}
+.cosa{font-weight:700;margin-top:14px}
+.domanda{border-top:1px solid var(--filo);padding:18px 0 6px}
+.piede{padding-top:18px;padding-bottom:40px;border-top:1px solid var(--filo);color:var(--testo2);font-size:15px}
+.piede p{margin:0 0 6px;overflow-wrap:anywhere}
